@@ -1,4 +1,4 @@
-# -Automata-Theory-Project
+# Automata-Theory-Project
 KTU COM2022 project built with Lex&amp;Yacc and Regular Expression
 
 **Robot application that draws according to commands with Python**
