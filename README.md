@@ -1,25 +1,113 @@
-# Automata-Theory-Project
-KTU COM2022 project built with Lex&amp;Yacc and Regular Expression
+# 🤖 Automata Theory Project – Drawing Robot with Python
 
-**Robot application that draws according to commands with Python**
+**KTU COM2022 project built with Lex & Yacc and Regular Expressions**  
+A Python-based drawing robot that interprets commands and visualizes them using Turtle Graphics.
 
-The purpose of this project is to provide users with the ability to process randomly selected program lines from a text file and draw them using the turtle graphics module. This allows users to reinforce their programming fundamentals through practice, observing how various shapes are created through visual feedback. Additionally, it offers an opportunity to gain experience in application development and modular programming using Python's diverse libraries such as tkinter, ply, and turtle.
+---
 
-This project is designed as a Python application simulating a drawing robot with various functions. Essentially, the user enters the name of a text file, and a random line from this file is selected and processed. The project utilizes Python's standard libraries such as tkinter and additional libraries to perform tasks like creating graphical user interfaces, text analysis, and graphic drawing.
+## 🎯 Project Purpose
 
-Operation of the Program
-User Input and Text Processing:
-Initially, the user provides the name of a txt file. The lines within this file are read, and one line is randomly chosen. This selected line is then passed as input to the lexer.
+This project allows users to process randomly selected lines from a `.txt` file, tokenize them using **Lex/Yacc (PLY)**, and **draw corresponding shapes** using the **Turtle graphics** module in Python.
 
-Lexer (Tokenization):
-The selected program line is tokenized using the ply.lex library. This step is crucial for defining commands and numerical values within the line. The lexer output is written to a file named b.txt as a list of tokens and simultaneously stored as a Python list.
+It provides a visual and interactive way to reinforce programming fundamentals and explore:
 
-Drawing with Turtle:
-The tokens are drawn on the screen using the turtle graphics module. Each token represents a drawing command (e.g., move forward, turn right). The result of the drawing is saved as an EPS file, showing the shape drawn by the turtle. This EPS file is later converted to PNG format and displayed to the user.
+- Tokenization (Lexing)
+- Command parsing
+- Graphics rendering
+- GUI design
+- EPS → PNG conversion with Ghostscript
 
-Graphical User Interface (GUI):
-The project offers a two-stage graphical user interface developed with the tkinter library. In the first interface, the user enters the txt file name to initiate the drawing process. The second interface displays the drawing result and potential error messages (such as mismatched parentheses, undefined commands).
+---
 
-This project aims to provide a practical tool for users to practice programming concepts through visual feedback and to gain experience in application development using Python's powerful libraries.
+## 🧠 How It Works
 
-Ghostscript is software used to convert EPS files to PNG format. EPS files store vector graphics, allowing shapes drawn with the turtle module to be saved in a vector format. Later, this vector file is converted to PNG format via Ghostscript and displayed to the user. This step ensures that the drawing results are viewed more widely and enhances the project's functionality.
+### 1. 📄 User Input & Random Line Selection
+- The user is prompted to enter the name of a text file.
+- The file is read and **one random line** is selected.
+
+### 2. 🧪 Lexical Analysis (PLY Lexer)
+- The selected line is tokenized using `ply.lex`.
+- The output tokens are saved to:
+  - `b.txt` (raw token output)
+  - A Python list (used internally)
+
+### 3. 🐢 Drawing with Turtle
+- Tokens are interpreted as drawing instructions:
+  - Example: forward, turn, loop
+- The drawing is visualized using `turtle` and saved as `.eps`.
+- EPS is converted to PNG using **Ghostscript**.
+
+### 4. 🖼️ GUI with Tkinter
+- **Stage 1:** User enters the file name.
+- **Stage 2:** Shows the drawing result and error messages (e.g., mismatched parentheses).
+
+---
+
+## ⚙️ Technologies Used
+
+- `Python`
+- `ply` – Lex & Yacc in Python
+- `tkinter` – GUI Interface
+- `turtle` – Drawing module
+- `Ghostscript` – EPS to PNG conversion
+- `random`, `os`, `sys` – Standard utilities
+
+---
+
+## 📦 Project Structure
+
+```
+Automata-Theory-Project/
+├── lexer.py                 # Tokenizer (PLY)
+├── draw.py                  # Turtle drawing logic
+├── gui.py                   # GUI using tkinter
+├── convert.py               # EPS to PNG conversion
+├── b.txt                    # Token output file
+├── sample.txt               # Example input file
+└── main.py                  # Entry point
+```
+
+---
+
+## ▶️ How to Run
+
+1. Install Ghostscript if not already installed.
+2. Run the main Python file:
+
+```bash
+python main.py
+```
+
+3. Enter the name of a `.txt` file (e.g., `sample.txt`).
+4. View the resulting drawing and possible errors in the GUI.
+
+---
+
+## 📸 Output Format
+
+- 🖼️ EPS files: Vector output of the drawing
+- 📷 PNG files: Converted images for display
+- 💾 `b.txt`: Stores list of tokens from lexer
+
+---
+
+## 🎯 Project Goals
+
+- Provide hands-on practice with:
+  - Lexical analysis
+  - Drawing automation
+  - File handling and parsing
+- Strengthen understanding of:
+  - Modular Python development
+  - GUI applications
+  - Turtle-based drawing logic
+
+---
+
+## 📝 License
+
+This project is part of KTU COM2022 coursework and is shared for educational use.
+
+---
+
+📐 **Code the command. See it drawn. Learn by doing.**
